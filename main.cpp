@@ -7,7 +7,7 @@
 #define PI 3.1416
 
 GLint i;
-GLfloat cx=0,str=500.0,mn=500.0,mcloud=0,fan=0,sx=0,mc=0,xc=0,cm=0;
+GLfloat cx=0,str=500.0,mn=500.0,mcloud=0,fan=0,sx=0,mc=0,xc=0,cm=0,radius=4,radiusa=3.5,radiusb=3.5,radiusc=3,radiusd=4,star=0,cara=0,carb=0,carc=0,card=0,care=0,carf=0;
 GLfloat sr=0.0,sg=0.749,sb=1.0;
 float rfan=0.0;
 int frameNumber = 0;
@@ -45,6 +45,14 @@ void bus()
     glVertex3f(-0.52, 0.2, 0);
     glVertex3f(-0.52, 0.5, 0);
     glVertex3f(-0.43, 0.45, 0);
+    glEnd();
+
+     glColor3f(255.0, 223.0, 0.0);
+    glBegin(GL_POLYGON);
+    glVertex3f(cara, carb, 0);
+    glVertex3f(carc, card, 0);
+    glVertex3f(care, carf, 0);
+    glVertex3f(care, carf, 0);
     glEnd();
 
     glColor3f(1.0, 1.5, 1.0);
@@ -339,7 +347,49 @@ void cloudB()
 
 }
 
+
 void a()                                        //mini Cloud
+
+{
+    //left
+
+    glPushMatrix();
+    glTranslatef(4,5.5,0);
+    circle(radius);
+    glPopMatrix();
+
+    //right
+
+    glPushMatrix();
+    glTranslatef(-8,5.5,0);
+    circle(radiusa);
+    glPopMatrix();
+
+    //top left
+
+    glPushMatrix();
+    glTranslatef(-3.5,9,0);
+    circle(radiusb);
+    glPopMatrix();
+
+    //top right
+
+    glPushMatrix();
+    glTranslatef(1,9,0);
+    circle(radiusc);
+    glPopMatrix();
+
+    //middle
+
+    glPushMatrix();
+    glTranslatef(-1.5,5.5,0);
+    circle(radiusd);
+    glPopMatrix();
+
+}
+
+
+void treeleaves()                                        //mini Cloud
 
 {
     //left
@@ -378,6 +428,10 @@ void a()                                        //mini Cloud
     glPopMatrix();
 
 }
+
+
+
+
 
 
 void c()                                        //One Single Cloud
@@ -585,15 +639,15 @@ void tree()                             //green leaves
 {
     glPushMatrix();
     glTranslatef(35,10,0);
-    a();
+    treeleaves();
     glPopMatrix();
     glPushMatrix();
     glTranslatef(28,16,0);
-    a();
+    treeleaves();
     glPopMatrix();
     glPushMatrix();
     glTranslatef(20,10,0);
-    a();
+    treeleaves();
     glPopMatrix();
 }
 void treebody()                         //tree body
@@ -849,6 +903,7 @@ void drawWindmill() {
 		glEnd();
 	}
 }
+
 void display(void)
 {
     glClear(GL_COLOR_BUFFER_BIT);
@@ -874,7 +929,164 @@ void display(void)
 
 
 
-///wind mill ///
+
+
+
+
+
+
+/// stars start ///
+
+    glColor3f(1.0, 1.0, 1.0);///sss
+    glPushMatrix();
+    glTranslatef(-0.5,34.0,0.0);
+    glRotatef(360,0,0,1);
+    glutWireTorus(0.3,0.1,star,star);
+    glPopMatrix();
+
+    glColor3f(1.0, 1.0, 1.0);///sss
+    glPushMatrix();
+    glTranslatef(-10.0,39.0,0.0);
+    glRotatef(360,0,0,1);
+    glutWireTorus(0.3,0.1,star,star);
+    glPopMatrix();
+
+    glColor3f(1.0, 1.0, 1.0);///sss
+    glPushMatrix();
+    glTranslatef(-25.0,48.0,0.0);
+    glRotatef(360,0,0,1);
+    glutWireTorus(0.3,0.1,star,star);
+    glPopMatrix();
+
+    glColor3f(1.0, 1.0, 1.0);///sss
+    glPushMatrix();
+    glTranslatef(-20.0,40.0,0.0);
+    glRotatef(360,0,0,1);
+    glutWireTorus(0.2,0.1,star,star);
+    glPopMatrix();
+
+    glColor3f(1.0, 1.0, 1.0);///sss
+    glPushMatrix();
+    glTranslatef(-30.0,32.0,0.0);
+    glRotatef(360,0,0,1);
+    glutWireTorus(0.2,0.1,star,star);
+    glPopMatrix();
+
+
+     glColor3f(1.0, 1.0, 1.0);///sss
+    glPushMatrix();
+    glTranslatef(-33.0,30.0,0.0);
+    glRotatef(360,0,0,1);
+    glutWireTorus(0.1,0.1,star,star);
+    glPopMatrix();
+
+    glColor3f(1.0, 1.0, 1.0);///sss
+    glPushMatrix();
+    glTranslatef(-40.0,40.0,0.0);
+    glRotatef(360,0,0,1);
+    glutWireTorus(0.1,0.1,star,star);
+    glPopMatrix();
+
+    glColor3f(1.0, 1.0, 1.0);///sss
+    glPushMatrix();
+    glTranslatef(-43.0,47.0,0.0);
+    glRotatef(360,0,0,1);
+    glutWireTorus(0.1,0.1,star,star);
+    glPopMatrix();
+
+    glColor3f(1.0, 1.0, 1.0);///sss
+    glPushMatrix();
+    glTranslatef(-48.0,38.0,0.0);
+    glRotatef(360,0,0,1);
+    glutWireTorus(0.1,0.1,star,star);
+    glPopMatrix();
+
+    glColor3f(1.0, 1.0, 1.0);///sss
+    glPushMatrix();
+    glTranslatef(-22.0,40.0,0.0);
+    glRotatef(360,0,0,1);
+    glutWireTorus(0.1,0.1,star,star);
+    glPopMatrix();
+
+    glColor3f(1.0, 1.0, 1.0);///sss
+    glPushMatrix();
+    glTranslatef(-12.0,45.0,0.0);
+    glRotatef(360,0,0,1);
+    glutWireTorus(0.1,0.1,star,star);
+    glPopMatrix();
+
+    glColor3f(1.0, 1.0, 1.0);///sss
+    glPushMatrix();
+    glTranslatef(-10.0,30.0,0.0);
+    glRotatef(360,0,0,1);
+    glutWireTorus(0.1,0.1,star,star);
+    glPopMatrix();
+
+    glColor3f(1.0, 1.0, 1.0);///sss
+    glPushMatrix();
+    glTranslatef(-19.0,28.0,0.0);
+    glRotatef(360,0,0,1);
+    glutWireTorus(0.1,0.1,star,star);
+    glPopMatrix();
+
+    glColor3f(1.0, 1.0, 1.0);///sss
+    glPushMatrix();
+    glTranslatef(5.0,40.0,0.0);
+    glRotatef(360,0,0,1);
+    glutWireTorus(0.1,0.1,star,star);
+    glPopMatrix();
+
+    glColor3f(1.0, 1.0, 1.0);///sss
+    glPushMatrix();
+    glTranslatef(15.0,45.0,0.0);
+    glRotatef(360,0,0,1);
+    glutWireTorus(0.2,0.1,star,star);
+    glPopMatrix();
+
+    glColor3f(1.0, 1.0, 1.0);///sss
+    glPushMatrix();
+    glTranslatef(25.0,40.0,0.0);
+    glRotatef(360,0,0,1);
+    glutWireTorus(0.1,0.1,star,star);
+    glPopMatrix();
+
+    glColor3f(1.0, 1.0, 1.0);///sss
+    glPushMatrix();
+    glTranslatef(30.0,35.0,0.0);
+    glRotatef(360,0,0,1);
+    glutWireTorus(0.1,0.1,star,star);
+    glPopMatrix();
+
+    glColor3f(1.0, 1.0, 1.0);///sss
+    glPushMatrix();
+    glTranslatef(35.0,33.0,0.0);
+    glRotatef(360,0,0,1);
+    glutWireTorus(0.2,0.1,star,star);
+    glPopMatrix();
+
+    glColor3f(1.0, 1.0, 1.0);///sss
+    glPushMatrix();
+    glTranslatef(48.0,40.0,0.0);
+    glRotatef(360,0,0,1);
+    glutWireTorus(0.1,0.1,star,star);
+    glPopMatrix();
+
+    glColor3f(1.0, 1.0, 1.0);///sss
+    glPushMatrix();
+    glTranslatef(40.0,32.0,0.0);
+    glRotatef(360,0,0,1);
+    glutWireTorus(0.1,0.1,star,star);
+    glPopMatrix();
+
+    glColor3f(1.0, 1.0, 1.0);///sss
+    glPushMatrix();
+    glTranslatef(37.0,39.0,0.0);
+    glRotatef(360,0,0,1);
+    glutWireTorus(0.2,0.1,star,star);
+    glPopMatrix();
+
+///star ends///
+///windmill //
 
     glPushMatrix();
     glColor3f(0.0, 0.0, 0.0);
@@ -883,19 +1095,13 @@ void display(void)
     drawWindmill();
     glPopMatrix();
 
-
-
-
     glColor3f(160.0, 82.0, 45.0);///sss
     glPushMatrix();
     glTranslatef(-39.5,32.0,0.0);
     glRotatef(360,0,0,1);
     circle(1.05);
     glPopMatrix();
-
-
-///
-
+///windmill ends//
 
 ///
     glPushMatrix();
@@ -1252,6 +1458,7 @@ void mouse(int key, int state, int x, int y)
 
 void keyDisplayAnimationDay()
 {
+///background color///
     str=500.0;
     sr=0.0;
     sg=0.749;
@@ -1260,12 +1467,29 @@ void keyDisplayAnimationDay()
     ss = 0.0;
 
     mn = 500.0;
+///cloud///
+    radius = 4;
+    radiusa = 3.5;
+    radiusb = 3.5;
+    radiusc = 3;
+    radiusd = 4;
+///stars///
+    star = 0;
+///carlight///
+    cara = 0;
+    carb = 0;
+    carc = 0;
+    card = 0;
+    care = 0;
+    carf = 0;
     glutPostRedisplay();
 
 
 }
 void keyDisplayAnimationNight()
 {
+
+///background color///
     str = 0.0;
     sr=0.0;
     sg=0.0;
@@ -1274,7 +1498,25 @@ void keyDisplayAnimationNight()
     ss = 500.0;
 
     mn = 0.0;
-    //nightmode();
+
+    ///cloud///
+    radius = 0;
+    radiusa = 0;
+    radiusb = 0;
+    radiusc = 0;
+    radiusd = 0;
+
+    ///stars///
+    star = 4;
+
+    ///carlight///
+    cara = -0.22;
+    carb = 0.45;
+    carc = -0.20;
+    card = 0.15;
+    care = -0.41;
+    carf = 0.32;
+
     glutPostRedisplay();
 
 
